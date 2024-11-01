@@ -13,14 +13,19 @@
     --font-Weights--500: 500;
     --font-Weights--700: 700;
 }
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+ }
 
 main {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     align-items: center;
-    height: 100vh;
+    height: 100vh;    
     background-color: var(--Light-Grayish-Blue);
 }
 
@@ -34,14 +39,12 @@ main {
     gap: 20px;    
     border-radius: 10px;    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 60vw;  
-    max-width: 50vw;
-    
+    width: 60rem;    
     
 }
 
 .container img {
-    width: 100%; 
+    width: 100rem; 
     max-width: 340px; 
     height: auto;
     border-radius: 10px 0px 0px 10px;
@@ -74,12 +77,12 @@ main {
 .profile {    
     display: flex;
     gap: 20px;
-    margin-top: 20px; 
-    background-image: url("./images/avatar-michelle.jpg");   
+    margin-top: 20px;    
 }
 .profile > .avatar {
     border-radius: 50%;
-    width: 50px;    
+    width: 50px;
+    
 }
 .share-btn {
     display: flex;   
@@ -234,18 +237,106 @@ button.active #shareIcon path {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;        
-        gap: 10px;    
+        gap: 10px;  
+        max-width: 120vw; 
+        width: 90vw;        
     }
+  }
+
+  @media (max-width:811px) {
+
+    .container {       
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;        
+        gap: 10px;  
+        margin: auto;
+        max-width: 120vw; 
+        width: 60vw; 
+        height: auto;       
+    }
+    .container img {
+        max-width: 100%; 
+        border-radius: 10px 10px 0px 0px;     
+    } 
   }
   
   @media (max-width:390px) {
-
+  
     .container {       
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         margin: auto;             
         gap: 10px;    
+        width: 98vw;
+        height: 100vh;
+    }
+    .container img {
+        max-width: 440px; 
+        border-radius: 10px 10px 0px 0px;     
+    } 
+
+    .share-btn {
+        display: flex;   
+        position: relative;
+        margin-left: auto;  
+        justify-content: space-between;     
+    }
+    .share-btn > button {
+        background: var(--Light-Grayish-Blue);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;   
+        z-index: 2;   
+    }
+
+
+    button.active  {
+        background: var(--Desaturated-Dark-Blue);       
+    }
+
+    .sharepop{        
+        position: absolute;   
+        justify-content: space-around;            
+        border-radius: 0px 0px 10px 10px;    
+        width: 383px;
+        height: 80px;  
+        z-index: 0;             
+    }
+
+    .sharepop::after {
+        content: "";
+        position: absolute;
+        width: 0px;
+        height: 0px;          
+    }   
+
+    .sharepop img{     
+        border-radius: 0%;       
+    }
+    .sharepop .sociallinks{
+        display: flex;
+        justify-content: space-around;
+        align-items: end;
+        margin: auto 150px auto 0px;
+        gap: 20px;
+    }
+    .sharepop p {
+        position: relative;
+        color: var(--Grayish-Blue);
+        margin: auto;
+        font-size: 15px;
+        font-family: var(--font-family);   
+        letter-spacing: 6px; 
+        text-transform: uppercase;          
+    } 
+    .visible {       
+        position: absolute; 
+        width: 100%;
+        right: 58px;
+        bottom: -18px;        
     }
   }
   
