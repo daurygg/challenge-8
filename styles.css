@@ -62,7 +62,8 @@ main {
 .text h1{
 
     font-family: var(--font-family);
-    font-weight: var(--font-Weights--500);    
+    font-weight: var(--font-Weights--500); 
+    color: var(--Ver-Dark-Grayish-Blue);   
 }
 
 .text p{
